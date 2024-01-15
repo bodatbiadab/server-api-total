@@ -26,6 +26,10 @@ app.use("/uploads", express.static("uploads"));
 require("./app/routes/routes")(app);
 const port = process.env.port || 6969;
 
+app.get('/', (req,res) => {
+  res.redirect('/product')
+});
+
 app.listen(port, () => {
   console.log(`Server berjalan di https://localhost:${port}`);
 });
